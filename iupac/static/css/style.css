@@ -65,6 +65,23 @@ h2{
 
 /* === Bootstrap override === */
 
+input.form-control, .btn-outline-success{
+	border-radius: 0px;
+	font-size: 0.8rem;
+	padding-top: 5px;
+	padding-bottom: 7px;
+}
+
+.btn-outline-success{
+	color: #6EB900;
+	border: 1px solid #6EB900;
+}
+
+.btn-outline-success:hover{
+	border: 1px solid #6EB900;
+	background: #6EB900;
+}
+
 .navbar-grey{
 	background: #333;
 }
