@@ -1,0 +1,144 @@
+/* === General === */
+
+body{
+	background: url(../img/doll_bg2.jpg);
+	font-size: 12px;
+}
+
+.container{
+	max-width: 1120px;
+}
+
+.hr{
+	width: 100%;
+	height: 3px;
+	background: #6EB900;
+}
+
+/* headers */
+
+h2{
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+/* text */
+
+.centered{
+	text-align: center;
+}
+
+.justified{
+	text-align: justify;
+}
+
+.text-right{
+	text-align: right;
+}
+
+
+
+.upper{
+	text-transform: uppercase;
+}
+
+/* blocks */
+
+.whiteBlock{
+	background: #fff;
+	padding-bottom: 30px;
+}
+
+.placeholderBlock{
+	background: #fff;
+	outline: 1px solid #333;
+	height: 100%;
+	width: 100%;
+}
+
+/* === Bootstrap override === */
+
+.navbar-grey{
+	background: #333;
+}
+
+.navbar-grey li{
+	padding: 0;
+	margin-right: -10px;
+}
+
+.navbar-grey a{
+	color: #fff;
+	background-color: #6EB900;
+	line-height: 1rem;
+	padding: 0;
+	margin: 0;
+	width: 30px;
+	text-align: center;
+}
+
+.nav-main{
+	background: #6EB900;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+.nav-main .nav-link{
+	margin: 0 !important;
+}
+
+.nav-main a{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0;
+	color: #fff;
+}
+
+.nav-main a:hover{
+	background: #497A00;
+}
+
+/* === Header === */
+
+.branding{
+	margin-top: 46px;
+	height: 200px;
+	width: 1120px;
+}
+
+/* === News === */
+
+.news-list{
+	font-size: 0.9rem;
+	list-style: none outside none;
+}
+
+.news-title{
+	padding-left: 5px;
+	padding-right: 10px;
+	color: red;
+	font-weight: bold;
+}
+
+/* === Salutatory === */
+
+.salutatory{
+	padding-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.speach{
+	font-size: 1rem;
+	line-height: 1.6rem;
+}
+
+/* === Highlights === */
+
+.highlights img{
+	width: 25%;
+	float: left;
+}
