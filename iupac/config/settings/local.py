@@ -15,4 +15,16 @@ DATABASES = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-INSTALLED_APPS += ( )
+INSTALLED_APPS += (
+    'content',
+    'feed',
+    'event',
+    'news',
+    'navigation',
+    'taggit',
+    'grappelli',
+    'filebrowser',
+    'tinymce',
+    'watson',
+    'django.contrib.admin',
+)
