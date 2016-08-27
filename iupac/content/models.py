@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 from taggit.managers import TaggableManager
-from filebrowser.base import FileObject
 
 
 class HTMLContent(models.Model):
@@ -27,15 +26,24 @@ class PlaintextContent(models.Model):
 
 class Page(models.Model):
     title = models.CharField(max_length=255)
-    url = models.CharField(max_length=50)
+    slug = models.SlugField()
     html_content = models.OneToOneField(HTMLContent, blank=True, null=True)
     plaintext_content = models.ForeignKey(PlaintextContent, blank=True, null=True)
     tags = TaggableManager()
+    parent = models.ForeignKey('self', blank=True, null=True)
     date_create = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        url = "/%s/" % self.slug
+        page = self
+        while page.parent:
+            url = "/%s%s" % (page.parent.slug,url)
+            page = page.parent
+        return url
 
 
 class ImageFile(models.Model):
@@ -80,3 +88,20 @@ class Slide(models.Model):
 
     def __unicode__(self):
         return self.description
+
+
+class IconLink(models.Model):
+    ICONLINK_CHOICES = (
+        ('Organizator', 'Organized by'),
+        ('Collaborator', 'In collaboration with'),
+        ('Cooperator', 'In cooperation with'),
+        ('Accomodation', 'Accommodation and Travel by'),
+        ('Supporter', 'Main supporters:'),
+    )
+    title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    href = models.CharField(max_length=255)
+    type = models.CharField(max_length=255, choices=ICONLINK_CHOICES, default=None, blank=True, null = True)
+
+    def __unicode__(self):
+        return self.title

@@ -15,15 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from filebrowser.sites import site
 from main.views import HomeView
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    #url(r'^admin/filebrowser/', include(site.urls)),
-    #url(r'^grappelli/', include('grappelli.urls')),
-    #url(r'^tinymce/', include('tinymce.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^$', HomeView.as_view(), name='home'),
