@@ -1,0 +1,210 @@
+/* === General === */
+
+body{
+	background: url(../img/doll_bg2.jpg);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+.container{
+	max-width: 1120px;
+}
+
+.hr{
+	width: 100%;
+	height: 3px;
+	background: #6EB900;
+}
+
+/* headers */
+
+h2{
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+/* text */
+
+.centered{
+	text-align: center;
+}
+
+.justified{
+	text-align: justify;
+}
+
+.text-right{
+	text-align: right;
+}
+
+
+
+.upper{
+	text-transform: uppercase;
+}
+
+/* blocks */
+
+.whiteBlock{
+	background: #fff;
+	padding-bottom: 30px;
+}
+
+.darkBlock{
+	background: #333;
+	padding-bottom: 30px;
+	color: #6EB900;
+}
+
+.placeholderBlock{
+	background: #fff;
+	outline: 1px solid #333;
+	height: 100%;
+	width: 100%;
+}
+
+/* === Bootstrap override === */
+
+input.form-control, .btn-outline-success{
+	border-radius: 0px;
+	font-size: 0.8rem;
+	padding-top: 5px;
+	padding-bottom: 7px;
+}
+
+.btn-outline-success{
+	color: #6EB900;
+	border: 1px solid #6EB900;
+}
+
+.btn-outline-success:hover{
+	border: 1px solid #6EB900;
+	background: #6EB900;
+}
+
+.navbar-grey{
+	background: #333;
+}
+
+.navbar-grey li{
+	padding: 0;
+	margin-right: -10px;
+}
+
+.navbar-grey a{
+	color: #fff;
+	background-color: #6EB900;
+	line-height: 1rem;
+	padding: 0;
+	margin: 0;
+	width: 30px;
+	text-align: center;
+}
+
+.nav-main{
+	background: #6EB900;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+
+.nav-main .nav-link{
+	margin: 0 !important;
+}
+
+.nav-main a{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0;
+	color: #fff;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.nav-main a:hover{
+	background: #497A00;
+}
+
+/* === Header === */
+
+.branding{
+	margin-top: 46px;
+}
+
+.branding, .branding img{
+	height: auto;
+	max-width: 100%;
+	min-height: inherit !important;
+}
+
+/* === News === */
+
+.news-list{
+	font-size: 0.9rem;
+	list-style: none outside none;
+}
+
+.news-title{
+	padding-left: 5px;
+	padding-right: 10px;
+	color: red;
+	font-weight: bold;
+}
+
+/* === Salutatory === */
+
+.salutatory{
+	padding-top: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.speach{
+	font-size: 0.9rem;
+	line-height: 1.6rem;
+}
+
+/* === Highlights === */
+
+.highlights img{
+	width: 25%;
+	float: left;
+}
+
+/* ===  Sponsors === */
+
+.sponsors{
+	padding-top: 40px;
+}
+
+.sponsors img{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.left-spaced{
+	padding-left: 15px;
+}
+
+/* === Footer === */
+
+.footer{
+	background: #333;
+	color: #999;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	font-size: 0.8rem;
+}
+
+.footer a{
+	color: #6EB900;
+}
+
+.copyright{
+}
+
+.nav-footer{
+	padding-bottom: 20px;
+}

@@ -22,9 +22,10 @@ INSTALLED_APPS += (
     'news',
     'navigation',
     'taggit',
-    'grappelli',
-    'filebrowser',
-    'tinymce',
+    'ckeditor',
+    'ckeditor_uploader',
     'watson',
-    'django.contrib.admin',
 )
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_BROWSE_SHOW_DIRS = 'True'
