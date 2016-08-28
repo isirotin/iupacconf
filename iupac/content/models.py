@@ -85,6 +85,7 @@ class DocumentFile(models.Model):
 class Slide(models.Model):
     description = models.CharField(max_length=255)
     image = models.ForeignKey(ImageFile)
+    content = models.ForeignKey(HTMLContent, blank=True, null=True)
 
     def __unicode__(self):
         return self.description
@@ -101,7 +102,53 @@ class IconLink(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255, blank=True, null=True)
     href = models.CharField(max_length=255)
+    blank = models.BooleanField(default=False)
     type = models.CharField(max_length=255, choices=ICONLINK_CHOICES, default=None, blank=True, null = True)
 
     def __unicode__(self):
         return self.title
+
+
+class Banner(models.Model):
+    href = models.CharField(max_length=255)
+    blank = models.BooleanField(default=False)
+    background_image = models.ForeignKey(ImageFile)
+    str1 = models.CharField(max_length=255)
+    str2 = models.CharField(max_length=255, blank=True, null=True)
+    tags = TaggableManager()
+
+    def __unicode__(self):
+        return self.str1
+
+
+class Topic(models.Model):
+    title = models.CharField(max_length=255)
+    page = models.ForeignKey(Page)
+    tags = TaggableManager()
+
+    def __unicode__(self):
+        return self.title
+
+
+class PersonRole(models.Model):
+    role = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.role
+
+
+class Person(models.Model):
+    firstname = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100)
+    middlename = models.CharField(max_length=100, blank=True, null=True)
+    topic = models.ForeignKey(Topic, blank=True, null=True)
+    role = models.ForeignKey(PersonRole, blank=True, null=True)
+    tags = TaggableManager()
+    content = models.ForeignKey(HTMLContent)
+
+    def get_absolute_url(self):
+        url = "/person/%s-%s/" % (self.firstname.lower(), self.lastname.lower())
+        return url
+
+    def __unicode__(self):
+        return self.lastname

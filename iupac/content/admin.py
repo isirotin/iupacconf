@@ -10,6 +10,10 @@ admin.site.register(DocumentFile)
 admin.site.register(DocumentFileType)
 admin.site.register(Slide)
 admin.site.register(PlaintextContent)
+admin.site.register(Banner)
+admin.site.register(Topic)
+admin.site.register(Person)
+admin.site.register(PersonRole)
 
 class HTMLContentAdminForm(forms.ModelForm):
     content = forms.CharField(widget=CKEditorUploadingWidget())

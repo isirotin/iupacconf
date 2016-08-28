@@ -1,3 +1,5 @@
 from django.contrib import admin
+from navigation.models import *
 
-# Register your models here.
+admin.site.register(MainMenuItem)
+admin.site.register(BottomMenuItem)
