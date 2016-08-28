@@ -10,6 +10,8 @@ class MainMenuItem(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True)
     href = models.CharField(max_length=512, blank=True, null=True)
     blank = models.BooleanField(default=False)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         if self.parent:
@@ -24,6 +26,8 @@ class BottomMenuItem(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True)
     href = models.CharField(max_length=512, blank=True, null=True)
     blank = models.BooleanField(default=False)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         if self.parent:

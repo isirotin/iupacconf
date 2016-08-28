@@ -86,6 +86,8 @@ class Slide(models.Model):
     description = models.CharField(max_length=255)
     image = models.ForeignKey(ImageFile)
     content = models.ForeignKey(HTMLContent, blank=True, null=True)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.description
@@ -104,6 +106,8 @@ class IconLink(models.Model):
     href = models.CharField(max_length=255)
     blank = models.BooleanField(default=False)
     type = models.CharField(max_length=255, choices=ICONLINK_CHOICES, default=None, blank=True, null = True)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.title
@@ -116,6 +120,8 @@ class Banner(models.Model):
     str1 = models.CharField(max_length=255)
     str2 = models.CharField(max_length=255, blank=True, null=True)
     tags = TaggableManager()
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.str1
@@ -125,6 +131,8 @@ class Topic(models.Model):
     title = models.CharField(max_length=255)
     page = models.ForeignKey(Page)
     tags = TaggableManager()
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.title
@@ -132,6 +140,8 @@ class Topic(models.Model):
 
 class PersonRole(models.Model):
     role = models.CharField(max_length=255)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.role
@@ -145,6 +155,8 @@ class Person(models.Model):
     role = models.ForeignKey(PersonRole, blank=True, null=True)
     tags = TaggableManager()
     content = models.ForeignKey(HTMLContent)
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
         url = "/person/%s-%s/" % (self.firstname.lower(), self.lastname.lower())
